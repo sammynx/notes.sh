@@ -1,1 +1,2 @@
-# notes.sh\nquick & dirty note taking.
+# notes.sh
+quick & dirty note taking for local git repos.
