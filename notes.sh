@@ -24,6 +24,10 @@ while (( "$#" )); do
 	if [[ "$1" == "-c" ]]; then
 		# clear file
 		rm "$NOTESFILE"
+		rm "$NOTESFILE".old
+		# remove from git exclude file
+		mv "$NOTESDIR/.git/info/exclude" "$NOTESDIR/.git/info/exclude.old"
+		sed "/^{$FILENAME}/d" "$NOTESDIR/.git/info/exclude.old" > "$NOTESDIR/.git/info/exclude"
 		shift
 	elif [[ "$1" == "-b" ]]; then
 		# branch or category name
