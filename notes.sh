@@ -40,8 +40,8 @@ while (( "$#" )); do
 			grep -q '^.NOTES' "$NOTESDIR/.git/info/exclude"
 			if [ $? -ne 0 ]; then
 				# git exclude file in local repo
-				echo .NOTES >> "$NOTESDIR/.git/info/exclude"
-				echo .NOTES.old >> "$NOTESDIR/.git/info/exclude"
+				echo "$FILENAME" >> "$NOTESDIR/.git/info/exclude"
+				echo "$FILENAME".old >> "$NOTESDIR/.git/info/exclude"
 				echo "note-file excluded from git"
 			else
 				echo "note-file already excluded"
