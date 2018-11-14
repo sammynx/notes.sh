@@ -38,6 +38,8 @@ while (( "$#" )); do
 		mv $NOTESFILE $NOTESFILE.old
 		sed "$2d" $NOTESFILE.old > $NOTESFILE
 		shift 2
+		# print notes
+		cat -n "$NOTESFILE"
 	elif [[ "$1" == "-e" ]]; then
 		if [[ -e "$NOTESDIR/.git/info/exclude" ]]; then
 			# test if already exluded
